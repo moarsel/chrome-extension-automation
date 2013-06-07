@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="themes.css">
+			<style type="text/css">
+				body {
+				padding: 5px 10px;
+				height: 170px;
+				width: 300px;
+				text-align:center;
+				}
+				img{
+				float:left;
+				overflow: hidden;
+				position: relative;
+				left:-14px;
+				top: -14px;
+				}
+</style>
+		<title>Extension Automation Popup</title>
+	</head>
+	<body id= "popupTitle" onload="popupInit()">
+		</br> 
+		<img src= "../icon128.png" width= 70px height = 70px>
+		<div id = "hoge" >
+		<h2>Extension Automation</h2>
+			<form id="popup-form">
+				<br>
+			<p>I want to <select id="bEnable">
+				<option value="Enable">Enable</option>
+				<option value="Disable">Disable</option>
+			</select> the extension:<br> <select id = "dropdown_ext_list"></select> 
+			<br> for web addresses with: <input id = "currentUrl" type="text" value= "" />
+			<input type='submit' value="Enter" name='enable' id="enterBtn" onclick = "window.close();"/>
+               </p>
+	        </form>
+		</div>
+		<p><a id = 'goto1' onClick="window.open(chrome.extension.getURL('options.html'))" href = "chrome.extension.getURL('options.html')"> View Settings</a></p>
+		<script type="text/javascript" src="entries.js"></script>
+	</body>
+</html>
