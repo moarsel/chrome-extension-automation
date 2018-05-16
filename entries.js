@@ -7,9 +7,9 @@ function init() {
 	firstRun();
 	//bind accordians
 	//$(".toggle").slideUp(); //start up
-	$(".trigger").click(function(){
-		$(this).next(".toggle").slideToggle("medium");
-	});
+//	$(".trigger").click(function(){
+//		$(this).next(".toggle").slideToggle("medium");
+//	});
 
 	form = document.getElementById("prefs-form");
 	chrome.management.getAll(load_extensions);
@@ -106,7 +106,9 @@ function makeTable() {
 		table.innerHTML = '<tr><th>Extension</th> <th>Filter</th></tr>';
 	}
 	var $tbody = document.createElement("tbody");
-	for (extId in localStorage) {
+	
+	for (var lsLength=0; lsLength < localStorage.length; lsLength++) {
+		extId = localStorage.key(lsLength);
 		if (extId == "undefined" || extId == "firstRun") {continue;}
 		chrome.management.get(extId, function (ext) {
 			var entry = JSON.parse(localStorage.getItem(ext.id));
@@ -140,22 +142,28 @@ function makeTable() {
 			extensionName.innerHTML += ext.name;
 			$td.appendChild(extensionName);
 			$td.setAttribute('class', entry.id);
-			$td.setAttribute('onclick', 'switchMode(this.className)')
+			//$td.onclick = switchMode(this.className);
 			$tr.appendChild($td);
 			$td = document.createElement("td");
-
+			
+		//console.log(entry)
 			for (i in entry.filterWords) {
 				var enable_words = document.createElement('span');
 				enable_words.innerHTML = entry.filterWords[i] + "," + "<br>";
 				enable_words.setAttribute('class', entry.id);
 				enable_words.setAttribute('id', i);
-				enable_words.setAttribute('onclick', 'removeItem(this.className, this.id)');
+			//	console.log(i)
+				
+			
 				$td.appendChild(enable_words);
+				enable_words.addEventListener('click', function() {removeItem(this.className, this.id);});
 			}
 			$tr.appendChild($td);
 			$tbody.appendChild($tr)
 			table.appendChild($tbody)
-		});
+			extensionName.addEventListener('click', function() {switchMode(this.parentNode.className);
+			});		
+});
 	}
 	getStored();
 }
@@ -220,3 +228,44 @@ function doClear() {
 		makeTable();
 	  }	
 }
+// Add event listeners once the DOM has fully loaded by listening for the
+// `DOMContentLoaded` event on the document, and adding your listeners to
+// specific elements when it triggers.
+document.addEventListener('DOMContentLoaded', function () {
+//var element = document.getElementById('popupTitle')
+	if (document.getElementById('popupTitle'))
+		{
+		document.getElementById('popupTitle').onload = function() {
+			console.log('PopUpInit!')
+		popupInit();
+		}
+		//document.querySelector('button').addEventListener('click', clickhandler);
+		}
+
+	else if (document.getElementById('optionstitle'))
+		{
+		document.getElementById('optionstitle').onload = function() {
+			console.log('Init!');
+		document.getElementById('clearbutton').addEventListener('click', doClear);
+		document.getElementById('importbutton').addEventListener('click', setStored);
+		document.getElementById('export').addEventListener('click', function (){selectAll('export');})
+		
+		
+		
+		init();
+		
+	
+		}
+		
+		}
+		
+		
+	
+	});
+
+
+	
+
+	
+	
+//End Trevors additions

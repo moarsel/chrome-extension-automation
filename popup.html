@@ -18,8 +18,11 @@
 				}
 </style>
 		<title>Extension Automation Popup</title>
+
 	</head>
-	<body id= "popupTitle" onload="popupInit()">
+	<!--onload="popupInit()"-->
+	<body id= "popupTitle">
+	<script type="text/javascript" src="entries.js"></script>
 		</br> 
 		<img src= "../icon128.png" width= 70px height = 70px>
 		<div id = "hoge" >
@@ -35,7 +38,8 @@
                </p>
 	        </form>
 		</div>
-		<p><a id = 'goto1' onClick="window.open(chrome.extension.getURL('options.html'))" href = "chrome.extension.getURL('options.html')"> View Settings</a></p>
-		<script type="text/javascript" src="entries.js"></script>
-	</body>
+		<p><a id = 'goto1' href = "options.html" target="_blank"> View Settings</a></p>
+
+		</body>
+		
 </html>

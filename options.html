@@ -3,22 +3,15 @@
 <!-- copyright © Russell Hoy 2012 -->
 <html>
   <head>
-
-    <title>
+	<title>
       Extension Options
     </title>
     <link rel="stylesheet" type="text/css" href="themes.css">
-    
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-  </head>
-  <body id="title" onload="init()">
-     <h1>
+	  
+ </head>
+  <body id="optionstitle">
+
+  <h1>
       Extension Automation
     </h1>
     <div id="hoge" class="trigger">
@@ -40,7 +33,7 @@
                       Disable
                     </option>
                   </select> the extension <select id="dropdown_ext_list">
-                    </select> <br>for website addresses with the text: <input type="text" id="txtEnter"> <input type='submit' value="Enter" name='enable' id="enterBtn">
+                    </select> <br>for website addresses with the text: <input type="text" id="txtEnter"> <input type='submit' value="Enter" name='enable' id="OptenterBtn">
                 </p>
               </form>
             </td>
@@ -48,74 +41,28 @@
         </table>
         <table id="prefs-table"></table>
         <p>
-          <button type="button" onclick="doClear()">Clear All</button>
+          <button id="clearbutton">Clear All</button>
         </p>
 
       </div>
     </div><br>
-    <br>
+   <br>
     <div id="hoge">
     <h2 class="trigger">
         Import - Export
       </h2>
              <div class="toggle">
                     <p>Copy Settings for <b>Export</b>
-                    <input onclick='selectAll("export")' id='export'></input></br>
+                    <input id='export'></input></br>
                       Paste Settings to <b>Import</b>
                     <input id='import'></input>
-                    <button onclick='setStored()'>Import</button>
+                    <button id='importbutton'>Import</button>
                       <a id='flash' style='display:none; color:green'> Settings Saved</a>
               </div>
         </div>
-  </br>
-    <div id="hoge">
-      <h2 class="trigger">
-        Instructions
-      </h2>
-      <div class="toggle">
-          <h4> How to Use </h4>
-          <p>
-          This extension can enable or disable your other Google Chrome extensions based on the websites you have open. For instance, if you want to enable one of your extensions when you're on facebook, choose <b>Enable</b>, then choose the extension you want to automate, then type in <b>'facebook.com'</b>. Or, if you want to keep an extension disabled unless your on a certain website, choose <b>Disable</b>, choose an extension, then type in the website.
-        </p>
-        <h4> Managing Settings</h4>
-        <p>Once you have some entries saved, you can modify them in the table above. If you want to switch between enabling and disabling an extension, click the icon for that extension. When an extension is being disabled for your keywords, the icon will be crossed out. If you want to delete one of your keyword filters, simply click on that word and it will be erased.</p>
-        <h4> Import and Export Settings </h4>
-        <p>To save your preferences to a different account or computer, select all the text in the top "import" text input, paste it in the bottom "export" box, then click "Import". Unfortunately, this extension does not synchronize automatically with your Google chrome profile right now, but this is a quick solution for importing/exporting settings. (You can even try to edit your settings by hand if you want -- at your own risk!) </p>
-        <p>
-          <a href="chrome://settings/extensions" target="_blank" onclick="chrome.tabs.create({url: 'chrome://settings/extensions'});">Manage Extensions</a>  
-           |  <a href="https://chrome.google.com/webstore/detail/ghopjgdkodchjclkkfdekhjfomdbakkb" target="_blank">Chrome Webstore</a> 
-        </p>
-      </div>
-    </div><br>
-    <br>
-    <div id="hoge">
-      <h2 class='trigger'>
-        Help
-      </h2>
-      <div class='toggle'>
-
-          <h4>Support</h4>
-
-        <p>
-          If you have any <b>questions</b> about Extension Automation, have a <b>feature request</b>, or noticed a <b>bug to report</b>, please don't hesitate to post it on the <a href="https://chrome.google.com/webstore/support/ghopjgdkodchjclkkfdekhjfomdbakkb#bug">support page</a>. You can also leave a comment on <a href="http://moarsel.wordpress.com/extension-automation/">this webpage</a>. I'll get back to you as soon as I can.
-        </p>
-          <h4>Credits</h4>
-        <p>
-          I developed this extension because it was a fun learning experience and I hope it is useful for others, but I don't have the time to add all the functionality that I would like to. If you would like to dig into the code for another project (or Google chrome extension), just let me know. The files can be found in the chrome developer tools "Resources" section.</br></br>If you like this extension, I greatly appreciate a "+1", a review on the chrome webstore, a small donation, or a review on your blog. Thank you!
-        </p>
-        <div id="donate">
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-            <input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="hosted_button_id" value="JV3CHWUGY6LBL"> <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="Support Me Through Paypal?"> <img alt="Support Me?" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-         <div class="g-plusone" data-annotation="inline" data-href="https://chrome.google.com/webstore/detail/ghopjgdkodchjclkkfdekhjfomdbakkb"></div>
-
-          </form>
-          <br>
-        </div>
-      </div>
- 
-<script type="text/javascript" src="entries.js">
-</script> <script type="text/javascript" src="jquery.js">
-</script>
+  </br> 
     </div>
-  </body>
+<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="entries.js"></script>  
+		</body>
 </html>
