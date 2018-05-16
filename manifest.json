@@ -2,7 +2,7 @@
   "name": "Extension Automation",
   "manifest_version": 2,
   "version": "1.1.3",
-  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://apis.google.com 'sha256-6r/inMSmnTmLZLlkpP+D8BuKop3DCL4OAegPquYVNSI=' ; object-src 'self'",
   "description": "Automatically enables and disables extensions for specified sites. For simpler browsing and better performance.",
   
   "icons": { "16": "icon16.png",

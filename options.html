@@ -7,7 +7,13 @@
       Extension Options
     </title>
     <link rel="stylesheet" type="text/css" href="themes.css">
-	  
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>	  
  </head>
   <body id="optionstitle">
 
@@ -61,8 +67,25 @@
               </div>
         </div>
   </br> 
-    </div>
-<br>
+<div id="hoge">
+      <h2 class="trigger">
+        Instructions
+      </h2>
+      <div class="toggle">
+          <h4> How to Use </h4>
+          <p>
+          This extension can enable or disable your other Google Chrome extensions based on the websites you have open. For instance, if you want to enable one of your extensions when you're on facebook, choose <b>Enable</b>, then choose the extension you want to automate, then type in <b>'facebook.com'</b>. Or, if you want to keep an extension disabled unless your on a certain website, choose <b>Disable</b>, choose an extension, then type in the website.
+        </p>
+        <h4> Managing Settings</h4>
+        <p>Once you have some entries saved, you can modify them in the table above. If you want to switch between enabling and disabling an extension, click the icon for that extension. When an extension is being disabled for your keywords, the icon will be crossed out. If you want to delete one of your keyword filters, simply click on that word and it will be erased.</p>
+        <h4> Import and Export Settings </h4>
+        <p>To save your preferences to a different account or computer, select all the text in the top "import" text input, paste it in the bottom "export" box, then click "Import". Unfortunately, this extension does not synchronize automatically with your Google chrome profile right now, but this is a quick solution for importing/exporting settings. (You can even try to edit your settings by hand if you want -- at your own risk!) </p>
+        <p>
+          <a href="chrome://settings/extensions" target="_blank" onclick="chrome.tabs.create({url: 'chrome://settings/extensions'});">Manage Extensions</a>  
+           |  <a href="https://chrome.google.com/webstore/detail/ghopjgdkodchjclkkfdekhjfomdbakkb" target="_blank">Chrome Webstore</a> 
+        </p>
+      </div>
+    </div><br>
     <br>
     <div id="hoge">
       <h2 class='trigger'>
@@ -88,6 +111,7 @@
           <br>
         </div>
       </div>
+    </div>
 <script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="entries.js"></script>  
 		</body>
